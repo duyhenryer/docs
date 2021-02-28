@@ -5,7 +5,7 @@ site_description: My home Kubernetes (Kind) cluster managed by GitOps (Flux2)
 site_author: Duy Henry
 site_url: https://duyhenryer.github.io/gitops-docs/
 
-repo_name: onedr0p/home-cluster
+repo_name: duyhenryer/gitops-docs
 repo_url: https://github.com/duyhenryer/gitops-docs
 edit_uri: "edit/master/docs/"
 
