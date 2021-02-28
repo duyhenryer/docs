@@ -1,13 +1,13 @@
 ---
 
-site_name: onedr0p | Home Cluster
-site_description: My home Kubernetes (k3s) cluster managed by GitOps (Flux2)
-site_author: Devin Buhl
-site_url: https://onedr0p.github.io/home-cluster/
+site_name: GitOps Docs
+site_description: My home Kubernetes (Kind) cluster managed by GitOps (Flux2)
+site_author: Duy Henry
+site_url: https://duyhenryer.github.io/gitops-docs/
 
 repo_name: onedr0p/home-cluster
-repo_url: https://github.com/onedr0p/home-cluster
-edit_uri: "edit/main/docs/"
+repo_url: https://github.com/duyhenryer/gitops-docs
+edit_uri: "edit/master/docs/"
 
 theme:
   name: material
