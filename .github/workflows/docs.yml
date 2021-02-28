@@ -7,7 +7,7 @@ on: # yamllint disable-line rule:truthy
   push:
     branches:
     - 'docs-*'
-    - main
+    - master
     paths:
     - '.github/workflows/docs.yaml'
     - 'mkdocs.yml'
