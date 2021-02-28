@@ -57,3 +57,4 @@ nav:
 - Sealed Secrets: sealed-secrets.md
 - Snmp Exporter: snmp-exporter.md
 - Velero: velero.md
+- HelmRelease: helmrelease.md
