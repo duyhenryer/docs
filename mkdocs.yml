@@ -58,3 +58,12 @@ nav:
 - Snmp Exporter: snmp-exporter.md
 - Velero: velero.md
 - HelmRelease: helmrelease.md
+- AWS:
+  - EC2: aws/ec2.md
+  - EKS: aws/eks.md
+- Monitoring-Logging:
+- Docker:
+- Kubernetes:
+  - deployment: k8s/deployment.md
+  - service: k8s/service.md
+- Helm:
