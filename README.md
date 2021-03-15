@@ -8,4 +8,4 @@
 
 ## :handshake:&nbsp; Thanks
 
-A lot of inspiration for my cluster came from the people that have shared their clusters over at [awesome-home-kubernetes](https://github.com/k8s-at-home/awesome-home-kubernetes)
+[![Publish docs via GitHub Pages](https://github.com/duyhenryer/gitops-docs/actions/workflows/docs.yml/badge.svg)](https://github.com/duyhenryer/gitops-docs/actions/workflows/docs.yml)
