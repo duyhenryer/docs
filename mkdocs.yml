@@ -78,7 +78,7 @@ nav:
   - Iptables: networking/iptables.md
 - Databases:
   - MySQL: databases/mysql.md
-  - MongoDB: databases: mongodb.md
+  - MongoDB: databases/mongodb.md
   - PostgreSQL: databases/postgresql.md
 - Cache:
   - Redis: cache/redis.md
