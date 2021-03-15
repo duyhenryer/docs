@@ -1,6 +1,6 @@
 ---
 
-site_name: GitOps Docs
+site_name: Docs
 site_description: My home Kubernetes (Kind) cluster managed by GitOps (Flux2)
 site_author: Duy Henry
 site_url: https://duyhenryer.github.io/gitops-docs/
@@ -58,12 +58,29 @@ nav:
 - Snmp Exporter: snmp-exporter.md
 - Velero: velero.md
 - HelmRelease: helmrelease.md
+
 - AWS:
   - EC2: aws/ec2.md
   - EKS: aws/eks.md
+- GCP:
+  - VPS: gcp/vps.md
+- GitOps:
+  - Fluxcd: gitops/fluxcd.md
+  - Argo: gitops/argo.md
 - Docker:
   - volume: docker/volume.md
 - Kubernetes:
   - deployment: k8s/deployment.md
   - service: k8s/service.md
-# - Helm:
+- Helm:
+  - Tips: helm/tips.md
+- Networking:
+  - Iptables: networking/iptables.md
+- Databases:
+  - MySQL: databases/mysql.md
+  - MongoDB: databases: mongodb.md
+  - PostgreSQL: databases/postgresql.md
+- Cache:
+  - Redis: cache/redis.md
+  
+  
