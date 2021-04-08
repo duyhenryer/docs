@@ -17,7 +17,7 @@
                v             |                 v
          [local process]     |           ****************          +--------------+
                |             +---------+ Routing decision +------> |table: filter |
-               v                         ****************          |chain: FORWARD|                               
+               v                         ****************          |chain: FORWARD|  
         ****************                                           +------+-------+
         Routing decision                                                  |
         ****************                                                  |
