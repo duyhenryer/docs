@@ -6,6 +6,5 @@
 
 ---
 
-## :handshake:&nbsp; Thanks
 
 [![Publish docs via GitHub Pages](https://github.com/duyhenryer/gitops-docs/actions/workflows/docs.yml/badge.svg)](https://github.com/duyhenryer/gitops-docs/actions/workflows/docs.yml)
