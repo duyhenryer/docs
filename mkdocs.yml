@@ -72,7 +72,7 @@ nav:
   - MongoDB: databases/mongodb.md
   - PostgreSQL: databases/postgresql.md
 - Kafka:
-  - Debezium: Kafka/Debezium.md
+  - Debezium: kafka/Debezium.md
 - Cache:
   - Redis: cache/redis.md
 - Linux:
