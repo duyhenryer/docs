@@ -48,17 +48,8 @@ markdown_extensions:
 
 nav:
 - Introduction: index.md
-- External Secrets: external-secrets.md
 - Flux: flux.md
-- Opnsense:
-  - BGP: opnsense/bgp.md
-  - PXE: opnsense/pxe.md
-- Rook-Ceph Maintenance: rook-ceph-maintenance.md
-- Sealed Secrets: sealed-secrets.md
-- Snmp Exporter: snmp-exporter.md
-- Velero: velero.md
 - HelmRelease: helmrelease.md
-
 - AWS:
   - EC2: aws/ec2.md
   - EKS: aws/eks.md
