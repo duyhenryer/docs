@@ -39,3 +39,13 @@
                                        XXXXXXXXXXXXXXXXXX
 
 ```
+
+### Tables
+iptables contains five tables:
+
+- `raw` is used only for configuring packets so that they are exempt from connection tracking.
+- `filter` is the default table, and is where all the actions typically associated with a firewall take place.
+- `nat` is used for network address translation (e.g. port forwarding).
+- `mangle` is used for specialized packet alterations.
+- `security` is used for Mandatory Access Control networking rules.
+
