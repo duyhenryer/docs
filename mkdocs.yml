@@ -50,11 +50,12 @@ nav:
 - Introduction: index.md
 - Flux: flux.md
 - HelmRelease: helmrelease.md
-- AWS:
-  - EC2: aws/ec2.md
-  - EKS: aws/eks.md
-- GCP:
-  - VPS: gcp/vps.md
+- Clouds:
+  - AWS:
+    - EC2: aws/ec2.md
+    - EKS: aws/eks.md
+  - GCP:
+    - VPS: gcp/vps.md
 - GitOps:
   - Fluxcd: gitops/fluxcd.md
   - Argo: gitops/argo.md
