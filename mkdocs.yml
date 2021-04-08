@@ -52,10 +52,10 @@ nav:
 - HelmRelease: helmrelease.md
 - Clouds:
   - AWS:
-    - EC2: aws/ec2.md
-    - EKS: aws/eks.md
+    - ec2: clouds/aws/ec2.md
+    - eks: clouds/aws/eks.md
   - GCP:
-    - VPS: gcp/vps.md
+    - vps: clouds/gcp/vps.md
 - GitOps:
   - Fluxcd: gitops/fluxcd.md
   - Argo: gitops/argo.md
