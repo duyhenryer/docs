@@ -75,5 +75,6 @@ nav:
   - Redis: cache/redis.md
 - Linux:
   - Tips: linux/tips.md
+- Github: git.md
   
   
