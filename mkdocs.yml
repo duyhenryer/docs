@@ -73,6 +73,7 @@ nav:
   - PostgreSQL: databases/postgresql.md
 - Kafka:
   - Debezium: kafka/Debezium.md
+  - CheatSheet: Kafka/cheat-sheet.md
 - Cache:
   - Redis: cache/redis.md
 - Linux:
