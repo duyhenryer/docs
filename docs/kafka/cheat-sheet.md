@@ -2,11 +2,13 @@
     This document is a work in progress.
 
 ## Kafka Topics
+
 ### List existing topics
  `bin/kafka-topics.sh --zookeeper localhost:2181 --list`
 
 ### Describe a topic
   `bin/kafka-topics.sh --zookeeper localhost:2181 --describe --topic mytopic `
+
 ### Purge a topic
  `bin/kafka-topics.sh --zookeeper localhost:2181 --alter --topic mytopic --config retention.ms=1000`
  
@@ -29,7 +31,7 @@
 ### Consume messages with the console consumer
 `bin/kafka-console-consumer.sh --new-consumer --bootstrap-server localhost:9092 --topic mytopic --from-beginning`
 
-## Get the consumer offsets for a topic
+### Get the consumer offsets for a topic
 `bin/kafka-consumer-offset-checker.sh --zookeeper=localhost:2181 --topic=mytopic --group=my_consumer_group`
 
 ### Read from __consumer_offsets
@@ -49,7 +51,7 @@ Add the following property to `config/consumer.properties`:
 ### View the details of a consumer group 
 `bin/kafka-consumer-groups.sh --zookeeper localhost:2181 --describe --group <group name>`
 
-## kafkacat
+## Kafkacat
 
 ### Getting the last five message of a topic
 `kafkacat -C -b localhost:9092 -t mytopic -p 0 -o -5 -e`
