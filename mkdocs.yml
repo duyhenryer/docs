@@ -74,10 +74,12 @@ nav:
 - Kafka:
   - Debezium: kafka/Debezium.md
   - CheatSheet: kafka/cheat-sheet.md
+  - Kafka: kafka/kafka.md
 - Cache:
   - Redis: cache/redis.md
 - Linux:
   - Tips: linux/tips.md
+  - Curl: linux/curl.md
 - Github: git.md
   
   
