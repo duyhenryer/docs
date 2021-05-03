@@ -1,12 +1,12 @@
 ---
 
 site_name: Docs
-site_description: My home Kubernetes (Kind) cluster managed by GitOps (Flux2)
+site_description: My docs.
 site_author: Duy Henry
-site_url: https://duyhenryer.github.io/gitops-docs/
+site_url: https://duyhenryer.github.io/docs/
 
 repo_name: duyhenryer/gitops-docs
-repo_url: https://github.com/duyhenryer/gitops-docs
+repo_url: https://github.com/duyhenryer/docs
 edit_uri: "edit/master/docs/"
 
 theme:
