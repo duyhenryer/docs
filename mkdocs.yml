@@ -63,6 +63,7 @@ nav:
 - Kubernetes:
   - deployment: k8s/deployment.md
   - service: k8s/service.md
+  - networking: k8s/networking.md
 - Helm:
   - Tips: helm/tips.md
 - Networking:
