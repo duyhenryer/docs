@@ -19,11 +19,30 @@ You can check how many ethernet interfaces and max IP per interface from https:/
 | Instance type   |      Maximum network interfaces      |  Private IPv4 addresses per interface |  IPv6 addresses per interface |
 |-----------------|:------------------------------------:|--------------------------------------:|------------------------------:|
 | m4.large	      |     2	                             |       10                              |	    10 |
-| m4.xlarge	      |     4	|       15	    |       15 |
-| m4.2xlarge      |	    4	|       15	    |       15 |
-| m4.4xlarge      |  	8	|       30	    |       30 |
-| m4.10xlarge     |  	8	|       30	    |       30 |
-| m4.16xlarge     |  	8	|       30	    |       30 |
-| m5.large        |	    3	|       10	    |       10 |
-| m5.xlarge       |	    4	|       15	    |       15 |
-| m5.2xlarge      |	    4	|       15	    |       15 |
+| m4.xlarge	      |     4	|       15	   |       15   |
+| m4.2xlarge      |	    4	|       15	   |       15   |
+| m4.4xlarge      |  	8	|       30	   |       30   |
+| m4.10xlarge     |  	8	|       30	   |       30   |
+| m4.16xlarge     |  	8	|       30	   |       30   |
+| m5.large        |	    3	|       10	   |       10   |
+| m5.xlarge       |	    4	|       15	   |       15   |
+| m5.2xlarge      |	    4	|       15	   |       15   |
+
+
+
+Here is the formula for max Pods numbers.
+```
+Max Pods = Maximum supported  Network Interfaces for instance type ) * ( IPv4 Addresses per Interface ) - 1
+```
+For example, if you have a `t3.medium` instance which support `max 3 ethernets` and 6 IPs per interface. You can create only 17 pods including the kubernetes internal Pods, Because One IP is reserved for nodes itself.
+```
+3 * 6 - 1 = 17
+```
+
+
+
+
+
+
+
+
