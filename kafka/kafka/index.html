@@ -1,0 +1,1278 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="My docs.">
+      
+      
+      
+        <meta name="author" content="Duy Henry">
+      
+      
+        <link rel="canonical" href="https://duyhenryer.github.io/docs/kafka/kafka/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.4">
+    
+    
+      
+        <title>Kafka - Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.f7f47774.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.3f5d1f46.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#2094f3">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="../../_static/custom.css">
+    
+    
+      
+
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="blue" data-md-color-accent="indigo">
+  
+    
+    <script>function __prefix(e){return new URL("../..",location).pathname+"."+e}function __get(e,t=localStorage){return JSON.parse(t.getItem(__prefix(e)))}</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#install-kafka-without-zookeeper" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Docs" class="md-header__button md-logo" aria-label="Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Kafka
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        
+<a href="https://github.com/duyhenryer/docs/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    duyhenryer/gitops-docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Docs" class="md-nav__button md-logo" aria-label="Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Docs
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/duyhenryer/docs/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    duyhenryer/gitops-docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../flux/" class="md-nav__link">
+        Flux
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../helmrelease/" class="md-nav__link">
+        HelmRelease
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        AWS
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="AWS" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          AWS
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../aws/ec2/" class="md-nav__link">
+        ec2
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../aws/eks/" class="md-nav__link">
+        eks
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        GCP
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="GCP" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          GCP
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gcp/vps/" class="md-nav__link">
+        vm
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      <label class="md-nav__link" for="__nav_6">
+        GitOps
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="GitOps" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          GitOps
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gitops/fluxcd/" class="md-nav__link">
+        Fluxcd
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gitops/argo/" class="md-nav__link">
+        Argo
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      <label class="md-nav__link" for="__nav_7">
+        Docker
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Docker" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Docker
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docker/volume/" class="md-nav__link">
+        volume
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../docker/logging/" class="md-nav__link">
+        logging
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      <label class="md-nav__link" for="__nav_8">
+        Kubernetes
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Kubernetes" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Kubernetes
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../k8s/deployment/" class="md-nav__link">
+        deployment
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../k8s/service/" class="md-nav__link">
+        service
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../k8s/networking/" class="md-nav__link">
+        networking
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      <label class="md-nav__link" for="__nav_9">
+        Helm
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Helm" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Helm
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../helm/tips/" class="md-nav__link">
+        Tips
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
+      
+      <label class="md-nav__link" for="__nav_10">
+        Networking
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Networking" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Networking
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../networking/iptables/" class="md-nav__link">
+        Iptables
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" type="checkbox" id="__nav_11" >
+      
+      <label class="md-nav__link" for="__nav_11">
+        Databases
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Databases" data-md-level="1">
+        <label class="md-nav__title" for="__nav_11">
+          <span class="md-nav__icon md-icon"></span>
+          Databases
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../databases/mysql/" class="md-nav__link">
+        MySQL
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../databases/mongodb/" class="md-nav__link">
+        MongoDB
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../databases/postgresql/" class="md-nav__link">
+        PostgreSQL
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12" type="checkbox" id="__nav_12" checked>
+      
+      <label class="md-nav__link" for="__nav_12">
+        Kafka
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Kafka" data-md-level="1">
+        <label class="md-nav__title" for="__nav_12">
+          <span class="md-nav__icon md-icon"></span>
+          Kafka
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Debezium/" class="md-nav__link">
+        Debezium
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cheat-sheet/" class="md-nav__link">
+        CheatSheet
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Kafka
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Kafka
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#install-kafka-without-zookeeper" class="md-nav__link">
+    Install kafka without zookeeper
+  </a>
+  
+    <nav class="md-nav" aria-label="Install kafka without zookeeper">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-is-zookeeper-used-in-kafka" class="md-nav__link">
+    Why is zookeeper used in kafka
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-will-kafka-work-without-zookeeper" class="md-nav__link">
+    How will kafka work without zookeeper
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13" type="checkbox" id="__nav_13" >
+      
+      <label class="md-nav__link" for="__nav_13">
+        Cache
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Cache" data-md-level="1">
+        <label class="md-nav__title" for="__nav_13">
+          <span class="md-nav__icon md-icon"></span>
+          Cache
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cache/redis/" class="md-nav__link">
+        Redis
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_14" type="checkbox" id="__nav_14" >
+      
+      <label class="md-nav__link" for="__nav_14">
+        Linux
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Linux" data-md-level="1">
+        <label class="md-nav__title" for="__nav_14">
+          <span class="md-nav__icon md-icon"></span>
+          Linux
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/tips/" class="md-nav__link">
+        Tips
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../linux/curl/" class="md-nav__link">
+        Curl
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git/" class="md-nav__link">
+        Github
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#install-kafka-without-zookeeper" class="md-nav__link">
+    Install kafka without zookeeper
+  </a>
+  
+    <nav class="md-nav" aria-label="Install kafka without zookeeper">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#why-is-zookeeper-used-in-kafka" class="md-nav__link">
+    Why is zookeeper used in kafka
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-will-kafka-work-without-zookeeper" class="md-nav__link">
+    How will kafka work without zookeeper
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/duyhenryer/docs/edit/master/docs/kafka/kafka.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                  <h1>Kafka</h1>
+                
+                <div class="admonition note">
+<p class="admonition-title">Work in progress</p>
+<p>This document is a work in progress.</p>
+</div>
+<h2 id="install-kafka-without-zookeeper">Install kafka without zookeeper<a class="headerlink" href="#install-kafka-without-zookeeper" title="Permanent link">&para;</a></h2>
+<p>In this article we will see how kafka can be setup without using zookeeper. We will setup a 3 node kafka cluster and create a test topic. We will use a kafka producer to produce data into the test topic and also use a kafka consumer to consume data from the kafka topic.</p>
+<h3 id="why-is-zookeeper-used-in-kafka">Why is zookeeper used in kafka<a class="headerlink" href="#why-is-zookeeper-used-in-kafka" title="Permanent link">&para;</a></h3>
+<p>Zookeeper is used to store kafka cluster metadata information. Zookeeper stores information like topic configuration, topic partition locations and so on.</p>
+<h2 id="how-will-kafka-work-without-zookeeper">How will kafka work without zookeeper<a class="headerlink" href="#how-will-kafka-work-without-zookeeper" title="Permanent link">&para;</a></h2>
+<p>Zookeeper acts as a external metadata management system for kafka. This creates multiple problems such as data duplication, increased system complexity and also leads to additional java processes being used.</p>
+<p>In order to run kafka without zookeeper, it can be run using Kafka Raft metadata mode ( KRaft ). In KRaft the kafka metadata information will be stored as a partition within kafka itself. There will be a KRaft Quorum of controller nodes which will be used to store the metadata. The metadata will be stored in an internal kafka topic @metadata .</p>
+<p>This is available in an experimental mode in kafka 2.8.0</p>
+<p>Right now using KRaft is experimental and should not be used in production</p>
+<p>Setting up a kafka cluster without zookeeper<br />
+Download kafka 
+Download kafka 2.8.0 from https://kafka.apache.org/downloads 
+<div class="highlight"><pre><span></span><code>wget https://apachemirror.wuchna.com/kafka/2.8.0/kafka_2.12-2.8.0.tgz
+</code></pre></div>
+Extract kafka 
+<div class="highlight"><pre><span></span><code>tar xzf  kafka_2.12-2.8.0.tgz 
+</code></pre></div>
+Open the kafka folder. All kafka commands should be run in the kafka folder 
+<div class="highlight"><pre><span></span><code>cd kafka_2.12-2.8.0
+</code></pre></div>
+Kafka cluster configuration<br />
+If you go to config/kraft folder inside the kafka home directory, you will see a file called server.properties. This is a sample file which is provided by kafka, to show how kafka can be started without zookeeper</p>
+<p>Create 3 new files from server.properties. This is because we will be creating a 3 node cluster
+<div class="highlight"><pre><span></span><code>cd config/kraft
+cp server.properties server1.properties
+cp server.properties server2.properties
+cp server.properties server3.properties
+</code></pre></div>
+In <code>server1.properties</code>, modify the following properties. Please keep the other properties as is.
+<div class="highlight"><pre><span></span><code>node.id=1
+
+process.roles=broker,controller
+
+inter.broker.listener.name=PLAINTEXT
+
+controller.listener.names=CONTROLLER
+
+listeners=PLAINTEXT://:9092,CONTROLLER://:19092
+
+log.dirs=/tmp/server1/kraft-combined-logs
+
+listener.security.protocol.map=CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT,SSL:SSL,SASL_PLAINTEXT:SASL_PLAINTEXT,SASL_SSL:SASL_SSL
+
+controller.quorum.voters=1@localhost:19092,2@localhost:19093,3@localhost:19094
+</code></pre></div>
+Let me explain what these properties do:</p>
+<p><code>node.id</code>: This will act as the node Id in the cluster. This will help us identify which broker this is. It will also help us identify which kraft controller node this is.</p>
+<p><code>process.roles</code>: A node can act as a broker or controller or both. Here we are indicating that this node can be both a kafka broker and a kraft controller node.</p>
+<p><code>inter.broker.listener.name</code>: Here the broker listener name is set to <code>PLAINTEXT</code></p>
+<p><code>controller.listener.names</code>: Here the controller listener name is set to <code>CONTROLLER</code></p>
+<p><code>listeners</code>: Here we indicate that the broker will use port 9092 and the kraft controller will use port 19092</p>
+<p><code>log.dirs</code>: This is the log directory where kafka will store the data</p>
+<p><code>listener.security.protocol.map</code>: Here the connection security details are added</p>
+<p><code>controller.quorum.voters</code>: This is used to indicate all the kraft controllers which are available. Here we are indicating that we will have 3 kraft controller nodes running on ports 19092, 19093 and 19094</p>
+<p>For <code>server2.properties</code> modify the following properties. Please keep the other properties as is.
+<div class="highlight"><pre><span></span><code>node.id=2
+
+process.roles=broker,controller
+
+controller.quorum.voters=1@localhost:19092,2@localhost:19093,3@localhost:19094
+
+listeners=PLAINTEXT://:9093,CONTROLLER://:19093
+
+inter.broker.listener.name=PLAINTEXT
+
+controller.listener.names=CONTROLLER
+
+log.dirs=/tmp/server2/kraft-combined-logs
+
+listener.security.protocol.map=CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT,SSL:SSL,SASL_PLAINTEXT:SASL_PLAINTEXT,SASL_SSL:SASL_SSL
+</code></pre></div>
+In Server 2, the broker port is 9093 and controller port is 19093. Also the log.dirs is different</p>
+<p>For <code>server3.properties</code> modify the following properties. Please keep the other properties as is.
+<div class="highlight"><pre><span></span><code>node.id=3
+
+process.roles=broker,controller
+
+controller.quorum.voters=1@localhost:19092,2@localhost:19093,3@localhost:19094
+
+listeners=PLAINTEXT://:9094,CONTROLLER://:19094
+
+inter.broker.listener.name=PLAINTEXT
+
+controller.listener.names=CONTROLLER
+
+log.dirs=/tmp/server3/kraft-combined-logs
+
+listener.security.protocol.map=CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT,SSL:SSL,SASL_PLAINTEXT:SASL_PLAINTEXT,SASL_SSL:SASL_SSL
+</code></pre></div>
+In Server 3 the broker port is 9094 and the controller port is 19094. Also the log.dirs is different</p>
+<p>Kafka cluster id creation and log directory setup<br />
+First we need to create kafka cluster id before starting the servers. This can be done using the following command:<br />
+<div class="highlight"><pre><span></span><code>./bin/kafka-storage.sh random-uuid
+</code></pre></div>
+Note down the uuid that comes after running the above statement. In my case I got the following uuid<br />
+<div class="highlight"><pre><span></span><code> ./bin/kafka-storage.sh random-uuid
+ 9dJzdGvfTPaCY4e8klXaDQ
+</code></pre></div>
+Next we need to format all the storage directories. This is basically the directory that we put in log.dirs property.</p>
+<p>This can be done with the following command
+<div class="highlight"><pre><span></span><code>./bin/kafka-storage.sh format -t &lt;uuid&gt; -c &lt;server_config_location&gt;
+</code></pre></div>
+Replace <code>&lt;uuid&gt;</code> with the uuid that you got in the previous step. Replace <code>&lt;server_config_location&gt;</code> with the server property files</p>
+<p>In my case, I will be running the following commands</p>
+<p>For Server 1:<br />
+<div class="highlight"><pre><span></span><code>./bin/kafka-storage.sh format -t 9dJzdGvfTPaCY4e8klXaDQ -c ./config/kraft/server1.properties
+</code></pre></div>
+For Server 2:
+<div class="highlight"><pre><span></span><code>./bin/kafka-storage.sh format -t 9dJzdGvfTPaCY4e8klXaDQ -c ./config/kraft/server2.properties
+</code></pre></div>
+For Server 3:<br />
+<div class="highlight"><pre><span></span><code>./bin/kafka-storage.sh format -t 9dJzdGvfTPaCY4e8klXaDQ -c ./config/kraft/server3.properties
+</code></pre></div>
+This is the result which you get when you run the 3 commands
+<div class="highlight"><pre><span></span><code>$ ./bin/kafka-storage.sh format -t 9dJzdGvfTPaCY4e8klXaDQ -c ./config/kraft/server1.properties
+</code></pre></div>
+Formatting /tmp/server1/kraft-combined-logs
+<div class="highlight"><pre><span></span><code>$ ./bin/kafka-storage.sh format -t 9dJzdGvfTPaCY4e8klXaDQ -c ./config/kraft/server2.properties
+</code></pre></div>
+Formatting /tmp/server2/kraft-combined-logs
+<div class="highlight"><pre><span></span><code>$ ./bin/kafka-storage.sh format -t 9dJzdGvfTPaCY4e8klXaDQ -c ./config/kraft/server3.properties
+</code></pre></div>
+Formatting /tmp/server3/kraft-combined-logs</p>
+<p>Starting the kafka servers<br />
+The kafka servers can be started in daemon mode using the following commands:</p>
+<p>First setup the heap properties<br />
+<div class="highlight"><pre><span></span><code>export KAFKA_HEAP_OPTS=&quot;-Xmx200M –Xms100M&quot;
+</code></pre></div>
+Here we are giving a very small max heap of <code>200M</code> since we are running all the servers in a single local machine. If you have bigger servers you can give heap size of 1GB or Above.</p>
+<p>Start Server 1:
+<div class="highlight"><pre><span></span><code>./bin/kafka-server-start.sh -daemon ./config/kraft/server1.properties
+</code></pre></div>
+Start Server 2:
+<div class="highlight"><pre><span></span><code>./bin/kafka-server-start.sh -daemon ./config/kraft/server2.properties
+</code></pre></div>
+Start Server 3:
+<div class="highlight"><pre><span></span><code>./bin/kafka-server-start.sh -daemon ./config/kraft/server3.properties
+</code></pre></div>
+Create a kafka topic<br />
+Let us create a topic kraft-test in this cluster</p>
+<p>The topic can be created using the following command:
+<div class="highlight"><pre><span></span><code>./bin/kafka-topics.sh --create --topic kraft-test --partitions 3 --replication-factor 3 --bootstrap-server localhost:9092
+</code></pre></div>
+We are creating a topic with 3 partitions and 3 replicas since we have 3 nodes.</p>
+<p>We can list the topics present in the cluster using the following command:
+<div class="highlight"><pre><span></span><code>bin/kafka-topics.sh --bootstrap-server localhost:9093 --list
+</code></pre></div>
+Running the above command gives the below result
+<div class="highlight"><pre><span></span><code>$ bin/kafka-topics.sh --bootstrap-server localhost:9093 --list
+kraft-test
+</code></pre></div>
+We can describe the topics present in the cluster using the following command:
+<div class="highlight"><pre><span></span><code>bin/kafka-topics.sh --bootstrap-server localhost:9093 --describe --topic kraft-test
+</code></pre></div>
+Running the above command gives the below result
+<div class="highlight"><pre><span></span><code>$ bin/kafka-topics.sh --bootstrap-server localhost:9093 --describe --topic kraft-test
+Topic: kraft-test       TopicId: vZKswHHlQk2mEOw0yzAGAA PartitionCount: 3       ReplicationFactor: 3    Configs: segment.bytes=1073741824
+        Topic: kraft-test       Partition: 0    Leader: 3       Replicas: 3,2,1 Isr: 3,2,1
+        Topic: kraft-test       Partition: 1    Leader: 2       Replicas: 2,3,1 Isr: 2,3,1
+        Topic: kraft-test       Partition: 2    Leader: 2       Replicas: 2,3,1 Isr: 2,3,1
+</code></pre></div>
+Exploring the kafka metadata using metadata shell<br />
+Similar to zookeeper cli, there is a metadata shell provided by kafka so that we can read the data in the @metadata internal topic.</p>
+<p>Open the shell using the following command
+<div class="highlight"><pre><span></span><code>./bin/kafka-metadata-shell.sh  --snapshot /tmp/server1/kraft-combined-logs/\@metadata-0/00000000000000000000.log
+</code></pre></div>
+The structure here is very similar to what we see in zookeeper</p>
+<p>In order the list the brokers you can type <code>ls brokers/</code>
+<div class="highlight"><pre><span></span><code>&gt;&gt; ls brokers/
+1  2  3
+</code></pre></div>
+In order to list the topics you can type <code>ls topics/</code>
+<div class="highlight"><pre><span></span><code>&gt;&gt; ls topics/
+kraft-test
+</code></pre></div>
+In order to see the topic metadata you can type <code>cat topics/kraft-test/0/data</code>
+<div class="highlight"><pre><span></span><code>&gt;&gt; cat topics/kraft-test/0/data
+{
+  &quot;partitionId&quot; : 0,
+  &quot;topicId&quot; : &quot;vZKswHHlQk2mEOw0yzAGAA&quot;,
+  &quot;replicas&quot; : [ 3, 2, 1 ],
+  &quot;isr&quot; : [ 3, 2, 1 ],
+  &quot;removingReplicas&quot; : null,
+  &quot;addingReplicas&quot; : null,
+  &quot;leader&quot; : 3,
+  &quot;leaderEpoch&quot; : 0,
+  &quot;partitionEpoch&quot; : 0
+}
+</code></pre></div>
+In order to find the controller leader node you can type <code>cat metadataQuorum/leader</code>
+<div class="highlight"><pre><span></span><code>&gt;&gt; cat metadataQuorum/leader
+MetaLogLeader(nodeId=2, epoch=4)
+</code></pre></div>
+Type exit to get out of the metadata shell</p>
+<p>Producing and consuming data from kafka<br />
+Use the following command to start a kafka producer in the terminal
+<div class="highlight"><pre><span></span><code>bin/kafka-console-producer.sh --broker-list localhost:9092 --topic kraft-test
+</code></pre></div>
+In a different terminal, use the following command to start a kafka consumer
+<div class="highlight"><pre><span></span><code>bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic kraft-test
+</code></pre></div>
+In the producer terminal send a bunch of messages as shown below
+<div class="highlight"><pre><span></span><code>$ bin/kafka-console-producer.sh --broker-list localhost:9092 --topic kraft-test
+
+&gt;message 1
+&gt;message 2
+&gt;message 3
+&gt;hello
+&gt;bye
+</code></pre></div>
+In the consumer terminal you would see the messages coming as shown below
+<div class="highlight"><pre><span></span><code>bin/kafka-console-consumer.sh --bootstrap-server localhost:9092 --topic 
+kraft-test                                                                       
+message 1
+message 2
+message 3
+hello
+bye
+</code></pre></div>
+ref:  adityasridhar.com </p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../cheat-sheet/" class="md-footer__link md-footer__link--prev" aria-label="Previous: CheatSheet" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              CheatSheet
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../cache/redis/" class="md-footer__link md-footer__link--next" aria-label="Next: Redis" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Redis
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../../assets/javascripts/workers/search.709b4209.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.febc23d1.min.js"></script>
+      
+    
+  </body>
+</html>
