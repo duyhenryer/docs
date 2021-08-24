@@ -60,7 +60,7 @@ nav:
   - Argo: gitops/argo.md
 - Docker:
   - volume: docker/volume.md
-    - volume: docker/logging.md
+  - volume: docker/logging.md
 - Kubernetes:
   - deployment: k8s/deployment.md
   - service: k8s/service.md
@@ -83,5 +83,3 @@ nav:
   - Tips: linux/tips.md
   - Curl: linux/curl.md
 - Github: git.md
-  
-  
