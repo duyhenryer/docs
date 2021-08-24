@@ -60,7 +60,7 @@ and Docker has lots of them available for you. Every Docker daemon has a default
  Currently, Docker supports the following logging drivers:
 
 | Driver      | Description |
-| :---        |    :----:   |
+| :---        |    :----   |
 | none       | No logs are available for the container and Docker logs do not return any output. |
 | local      | Logs are stored in a custom format designed for minimal overhead.                 |
 | json-file  | Logs are formatted as JSON. The default logging driver for Docker.                |
