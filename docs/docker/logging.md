@@ -101,5 +101,36 @@ $ docker info --format '{{.LoggingDriver}}'
 json-file
 ```
 
+## docker-compose with logging
+
+```
+version: '3'
+
+services:
+    logger:
+        image: nginx
+        container_name: "logger"
+        hostname: "logger"
+        restart: always
+
+        logging:
+          driver: json-file
+          options:
+              max-size: "10m"
+              max-file: "5"
+
+        environment:
+            - LOG_FILES=true
+            - LOG_SYSLOG=false
+            - MAX_FILES=10
+            - MAX_SIZE=50
+            - MAX_AGE=20
+            - DEBUG=false
+
+        volumes:
+            - ./logs:/srv/logs
+```
+
+
 
 https://earthly.dev/blog/understanding-docker-logging-and-log-files/
